@@ -3,7 +3,8 @@ import re
 
 pages = set()
 
-def getLinks(pageUrl):
+def getLinks(pageUrl):	
+	print("Get links called with: " + pageUrl)
 	global pages
 	bsObj = getBSObj(pageUrl)
 	for link in bsObj.findAll("a",href=re.compile("[^http:]")):
