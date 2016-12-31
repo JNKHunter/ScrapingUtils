@@ -13,11 +13,14 @@ def getBSObj(url):
 	except URLError as e:
 		print(e)
 		return None
+	else:
 	
-	try:
-		bsObj = BeautifulSoup(html.read(), "html.parser")
-	except AttributeError as e:
-		print(e)
-		return None
+		try:
+			bsObj = BeautifulSoup(html.read(), "html.parser")
+		except AttributeError as e:
+			print(e)
+			return None
+		else:
+			return bsObj
 
-	return bsObj
+	return None
